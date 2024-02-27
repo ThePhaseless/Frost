@@ -4,7 +4,7 @@ import axios from "axios";
 import * as fs from "fs";
 import * as path from "path";
 import { OpenAPIV3 } from "openapi-types";
-import { json } from "stream/consumers";
+import "dotenv/config";
 
 const swaggerUrl =
   process.env.SWAGGER_URL || "http://localhost:8080/v3/api-docs";
@@ -49,7 +49,6 @@ function appendToDeepestKey(
   value: unknown
 ): { [key: string]: unknown } {
   for (const k in json) {
-    console.log(k, json[k]);
     if (json[k] !== null) {
       appendToDeepestKey(json[k] as { [key: string]: unknown }, key, value);
     } else {
