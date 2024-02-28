@@ -18,7 +18,8 @@ module.exports = {
             ],
             "parserOptions": {
                 "sourceType": "script"
-            }
+            },
+
         }
     ],
     "parser": "@typescript-eslint/parser",
@@ -29,5 +30,6 @@ module.exports = {
         "@typescript-eslint"
     ],
     "rules": {
+        "@typescript-eslint/no-namespace": "off"
     }
 }
